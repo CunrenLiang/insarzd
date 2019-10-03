@@ -9,6 +9,12 @@ SRCLIST2="correctphase.c flat.c interf.c mosaicframe.c mosaicsubswath.c simamp.c
 BINDIR="../../bin"
 
 
+if [ ! -d "$BINDIR" ]; then
+    #echo "$BINDIR does not exist, create..."
+    mkdir $BINDIR
+fi
+
+
 #FLAGS="-lm"
 FLAGS="-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -lm"
 ###################################################################
