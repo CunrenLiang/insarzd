@@ -1,0 +1,97 @@
+<insarzd>
+<!--mandatory-->
+    <!--master must be ScanSAR for ScanSAR-stripmap-->
+    <component name="master">
+        <property name="data directory">
+            <value>/u/pez-z2/liangcun/nepal/alos2/scansar/a157/data/140809</value>
+        </property>
+        <!--no need to set if BOTH master and slave have only one frame in the data directories-->
+        <property name="frames">
+            <value>[0550, 0550, 0550, 0550]</value>
+        </property>
+<!--
+            <property name="polarization">
+                <value>HH</value>
+            </property>
+-->
+    </component>
+    <component name="slave">
+        <property name="data directory">
+            <value>/u/pez-z2/fielding/Nepal/ALOS2/A157/F2-6/data/20150725</value>
+        </property>
+        <!--no need to set if BOTH master and slave have only one frame in the data directories-->
+        <property name="frames">
+            <value>[0540, 0550, 0560, 0570]</value>
+        </property>
+<!--
+            <property name="polarization">
+                <value>HH</value>
+            </property>
+-->
+    </component>
+    <component name="dem">
+        <property name="geometrical coregistration">
+            <value>/u/pez-z2/liangcun/nepal/topo/demLat_N22_N33_Lon_E078_E092.dem.wgs84</value>
+        </property>
+        <property name="geocoding">
+            <value>/u/pez-z2/liangcun/nepal/topo/3/demLat_N22_N33_Lon_E078_E092.dem.wgs84</value>
+        </property>
+    </component>
+<!--semi optional-->
+<!--ScanSAR processing parameters, have no effects on stripmap-stripmap interferometry-->
+    <component name="scansar">
+        <!--subswath number starting from 1-->
+        <!--for ScanSAR-stripmap interferometry, starting subswath and ending subswath are determined automatically, not determined by the parameters here-->
+        <property name="starting subswath">
+            <value>1</value>
+        </property>
+        <property name="ending subswath">
+            <value>5</value>
+        </property>
+        <!--for ScanSAR-stripmap interferometry, always do mbf for stripmap and always don't do filtering for ScanSAR-->
+        <property name="burst overlap threshhold for mbf filtering (%)">
+            <value>85.0</value>
+        </property>
+    </component>
+<!--optional-->
+    <component name="insar">
+        <!--for ScanSAR burst-by-burst processing, both range and azimuth looks here must be 1-->
+        <property name="number of range looks when forming interferogram">
+            <value>1</value>
+        </property>
+        <property name="number of azimuth looks when forming interferogram">
+            <value>14</value>
+        </property>
+        <property name="number of range looks">
+            <value>5</value>
+        </property>
+        <property name="number of azimuth looks">
+            <value>2</value>
+        </property>
+        <property name="number of range looks for matching between radar and simulated amplitudes">
+            <value>5</value>
+        </property>
+        <property name="number of azimuth looks for matching between radar and simulated amplitudes">
+            <value>2</value>
+        </property>
+        <property name="number of range looks for ionospheric correction">
+            <value>40</value>
+        </property>
+        <property name="number of azimuth looks for ionospheric correction">
+            <value>16</value>
+        </property>
+        <property name="filter strength">
+            <value>0.6</value>
+        </property>
+<!--
+        <property name="geocode bounding box">
+            <value>[26.2, 26.5, 64.87, 65.29]</value>
+        </property>
+-->
+        <property name="whether delete unnecessary large files">
+            <value>False</value>
+        </property>
+    </component>
+</insarzd>
+
+

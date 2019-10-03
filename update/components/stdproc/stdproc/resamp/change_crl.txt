@@ -1,0 +1,11 @@
+to get the value of ndown2 (file length of image2) in resamp.f90, the following files changed
+
+bindings/resampmodule.cpp
+include/resampmodule.h
+include/resampmoduleFortTrans.h
+Resamp.py
+src/resamp.f90
+src/resampSetState.F
+src/resampState.F
+
+
