@@ -9,6 +9,12 @@ SRCLIST2=""
 BINDIR="../../bin"
 
 
+if [ ! -d "$BINDIR" ]; then
+    #echo "$BINDIR does not exist, create..."
+    mkdir $BINDIR
+fi
+
+
 #
 FFLAGS="-O2 -ffixed-line-length-132"
 ###################################################################
