@@ -2,11 +2,17 @@
 
 
 #files need library
-SRCLIST1="look.c look_msk.c mbf.c resamp.c rg_filter.c"
+SRCLIST1="extract_burst.c look.c look_msk.c mbf.c resamp.c rg_filter.c"
 #files don't need library
-SRCLIST2="correctphase.c flat.c interf.c mosaicframe.c mosaicsubswath.c simamp.c"
+SRCLIST2="correctphase.c flat.c interf.c mosaicframe.c mosaicsubswath.c psfilt1.c simamp.c"
 #binary directory
 BINDIR="../../bin"
+
+
+if [ ! -d "$BINDIR" ]; then
+    #echo "$BINDIR does not exist, create..."
+    mkdir $BINDIR
+fi
 
 
 #FLAGS="-lm"
@@ -33,5 +39,4 @@ do
   binf=`basename ${srcf} .c`
   gcc $FLAGS -o ${BINDIR}/${binf} ${srcf}
 done
-
 
