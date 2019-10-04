@@ -266,7 +266,9 @@ command, you can first try changing the argument of -order with values such as 1
 try changing the argument of -gsize_max.
 
 
-
+4. ISCE forum
+Participate in discussion with the user/developer community at the following website:
+http://earthdef.caltech.edu/projects/isce_forum/boards
 
 
 
