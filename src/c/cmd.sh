@@ -2,9 +2,9 @@
 
 
 #files need library
-SRCLIST1="look.c look_msk.c mbf.c resamp.c rg_filter.c"
+SRCLIST1="extract_burst.c look.c look_msk.c mbf.c resamp.c rg_filter.c"
 #files don't need library
-SRCLIST2="correctphase.c flat.c interf.c mosaicframe.c mosaicsubswath.c simamp.c"
+SRCLIST2="correctphase.c flat.c interf.c mosaicframe.c mosaicsubswath.c psfilt1.c simamp.c"
 #binary directory
 BINDIR="../../bin"
 
@@ -26,7 +26,7 @@ for srcf in ${SRCLIST1}
 do
   #remove both directory and extension
   binf=`basename ${srcf} .c`
-  gcc -I./include $FLAGS ${srcf} ./lib/lib.a -o ${BINDIR}/${binf}
+  gcc ${srcf} -I./include ./lib/lib.a -o ${BINDIR}/${binf} $FLAGS
 done
 
 cd ./lib
@@ -37,7 +37,6 @@ for srcf in ${SRCLIST2}
 do
   #remove both directory and extension
   binf=`basename ${srcf} .c`
-  gcc $FLAGS -o ${BINDIR}/${binf} ${srcf}
+  gcc ${srcf} -o ${BINDIR}/${binf} $FLAGS
 done
-
 
