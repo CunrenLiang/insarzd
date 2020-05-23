@@ -1,4 +1,4 @@
-                          IMPORTANT NOTICE:
+                          IMPORTANT NOTICE
 
 This software has now been fully integrated into the JPL/Caltech ISCE software. 
 The package here is no longer maitained.
@@ -7,6 +7,8 @@ New applications in ISCE are called alos2App.py and alos2burstApp.py. The
 corresponding tutorials are here:
 https://github.com/isce-framework/isce2/tree/master/examples/input_files/alos2
 
+
+                                * * *
 
 
 InSAR processor for ALOS-2 multi-mode SAR data and ionospheric correction
